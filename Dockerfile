@@ -1,5 +1,9 @@
 FROM phusion/baseimage:0.9.17
 
+MAINTAINER Mario Vejlupek <mario@vejlupek.cz>
+
+LABEL Description="Nodejs 4.x and NPM 3.x image" Vendor="ngParty" Version="1.0"
+
 # Use baseimage-docker's init system. see http://bit.ly/1j6tz0M
 CMD ["/sbin/my_init"]
 
