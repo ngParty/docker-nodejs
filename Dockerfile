@@ -1,4 +1,4 @@
-ngparty/nodejs-base:0.9.17
+FROM ngparty/nodejs-base:0.9.17
 
 MAINTAINER Mario Vejlupek <mario@vejlupek.cz>
 
