@@ -1,15 +1,11 @@
-FROM phusion/baseimage:0.9.17
+ngparty/docker-nodejs-base:0.9.17
 
 MAINTAINER Mario Vejlupek <mario@vejlupek.cz>
 
-LABEL Description="Nodejs 4.x and NPM 3.x image" Vendor="ngParty" Version="1.1"
+LABEL Description="Nodejs 4.x and NPM 3.x image" Vendor="ngParty" Version="1.2"
 
 # Use baseimage-docker's init system. see http://bit.ly/1j6tz0M
 CMD ["/sbin/my_init"]
-
-# Install tools for compiled packages and common certificates
-RUN apt-get update -y && \
-  apt-get install --no-install-recommends -y build-essential ca-certificates
 
 # Install Nodejs 4.x version
 RUN mkdir /nodejs && \
@@ -21,4 +17,4 @@ ENV PATH $PATH:/nodejs/bin
 RUN npm update npm -g
 
 # Clean apt
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN rm -rf /tmp/* /var/tmp/*
